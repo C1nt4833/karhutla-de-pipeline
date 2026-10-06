@@ -6,26 +6,6 @@ Pipeline ini menangani ekstraksi data spasial dan cuaca (NASA FIRMS, NASA POWER,
 
 ---
 
-## 📂 Struktur Repository
-
-```text
-karhutla-de-pipeline/
-├── dags/
-│   └── dag_karhutla_pipeline.py    # DAG utama pipeline ETL & Machine Learning
-├── notebooks/
-│   └── ml_karhutla.ipynb           # Notebook eksperimen & analisis data Karhutla
-├── include/                        # Folder penyimpan hasil olahan data & model (.csv / .pkl)
-├── .dockerignore
-├── .gitignore
-├── airflow_settings.yaml           # Konfigurasi koneksi & variabel Airflow
-├── Dockerfile                      # Base image Astronomer Airflow Runtime
-├── packages.txt                    # Dependency paket OS Linux (Astro)
-├── requirements.txt                # Dependency Python Airflow (apache-airflow, mysql, dll)
-└── README.md
-```
-
----
-
 ## 🛠️ Prasyarat (Prerequisites)
 
 Pastikan perangkat kamu sudah terinstal:
@@ -37,14 +17,7 @@ Pastikan perangkat kamu sudah terinstal:
 
 ## 🚀 Cara Menjalankan Pipeline Secara Lokal
 
-### 1. Clone Repository
-
-```bash
-git clone https://github.com/USERNAME_KAMU/karhutla-de-pipeline.git
-cd karhutla-de-pipeline
-```
-
-### 2. Setup Environment Variable
+### Setup Environment Variable
 
 Buat file `.env` di direktori utama (*root*) jika membutuhkan kredensial database atau API key:
 
@@ -54,7 +27,7 @@ AIRFLOW_VAR_MYSQL_USER=root
 AIRFLOW_VAR_MYSQL_PASSWORD=rahasia
 ```
 
-### 3. Jalankan Airflow dengan Astro CLI
+### Jalankan Airflow dengan Astro CLI
 
 Jalankan perintah berikut di terminal:
 
@@ -64,7 +37,7 @@ astro dev start
 
 *Perintah ini akan membuat kontainer Docker dan menjalankan Airflow Webserver, Scheduler, Triggerer, dan Postgres secara otomatis.*
 
-### 4. Akses Airflow UI
+### Akses Airflow UI
 
 Buka browser dan akses:
 
@@ -79,4 +52,3 @@ Aktifkan DAG `dag_karhutla_pipeline` di dashboard Airflow untuk menjalankan alur
 ## 👤 Identitas Pengembang
 
 * **Nama**: Cinta Wardana
-* **NIM**: E1E124059
